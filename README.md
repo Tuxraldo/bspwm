@@ -1,6 +1,8 @@
 # Bspwm
 
-Minhas configuração atuais do bspwm no Debian Testing. 
+Minhas configuração atuais do bspwm no Debian Testing.
+
+Obs: por enquanto só está com o color scheme Everforest, ainda vou adicionar o Grubox-Dark, Nord e Dracula.
 
 Para reproduzir as configs no seu sistema, apenas copie as pastas para o diretório .config (ou com o caminho completo ~/.config) dentro da sua home.
 
