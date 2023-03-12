@@ -10,11 +10,11 @@
 super + Return
 	alacritty &
 
-##---------- Floating terminal ----------##
+##---------- Terminal Alternativo ----------##
 ctrl + alt + t
 	xfce4-terminal &
 
-##---------- File Manager ----------##
+##---------- Gerenciador de Arquivos ----------##
 super + t
 	thunar &
 
@@ -46,15 +46,15 @@ super + semicolon
 super + o 
 	$HOME/Pacotes/LibreOffice-still.standard-x86_64.AppImage
 
-##---------- Screen Lock----------##
+##---------- Bloquear Tela ----------##
 ctrl + alt + l
 	i3lock -c "#1e1e1e"
 
-##---------- Reload Polybar ----------##  
+##---------- Recarregar a Polybar ----------##  
 control + alt + r
 	/home/tadeu/.config/polybar/polybar-bspwm/launch.sh -r
 
-##---------- System ----------##
+##---------- Brilho e Volume ----------##
 
 # Brighness control
 XF86MonBrightness{Up,Down}
