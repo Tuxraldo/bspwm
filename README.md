@@ -2,6 +2,8 @@
 
 Minhas configuração atuais do bspwm no Debian Testing. 
 
+Para reproduzir as configs no seu sistema, apenas copie as pastas para o diretório .config (ou com o caminho completo ~/.config) dentro da sua home.
+
 Painel: polybar -
 Editor: vim -
 Lançador de aplicações: rofi -
