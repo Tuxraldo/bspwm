@@ -46,17 +46,17 @@ bspc rule -a Firefox-esr desktop=^1
 # WP 2 (web)
 bspc rule -a firefox desktop=^2 follow=on focus=on
 # WP 3 (terminal padrão)
-#bspc rule -a Xfce4-terminal=^3
+bspc rule -a Xfce4-terminal=^3
 # WP 4 (gerenciador de arquivos)
 bspc rule -a Thunar desktop=^4 follow=on focus=on
 # WP 5 (música/vídeo)
 bspc rule -a cmus desktop=^5
-#bspc rule -a Musescore desktop=^5
-#bspc rule -a smplayer desktop=^5
-#bspc rule -a mpv desktop=^5
+bspc rule -a Musescore desktop=^5
+bspc rule -a smplayer desktop=^5
+bspc rule -a mpv desktop=^5
 # WP 6 (outros terminais)
-#bspc rule -a Alacritty desktop=^3
-#bspc rule -a Lxterminal desktop=^3
+bspc rule -a Alacritty desktop=^3
+bspc rule -a Lxterminal desktop=^3
 # WP 7 (texto, edição e visualização de arquivos)
 bspc rule -a Atril desktop=^7
 bspc rule -a Evince desktop=^7
