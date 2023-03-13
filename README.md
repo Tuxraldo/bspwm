@@ -1,7 +1,3 @@
-# Bspwm
-
-Minhas configuração atuais do bspwm no Debian Testing.
-
 Obs: por enquanto só está com o color scheme Everforest, ainda vou adicionar o Grubox-Dark, Nord e Dracula.
 
 Para reproduzir as configs no seu sistema, apenas copie as pastas para o diretório .config (ou com o caminho completo ~/.config) dentro da sua home. E certifique-se de que os arquivos "launch.sh" da polybar, "bspwmrc" e "sxhkd" estejam com permissão de execuçao.
