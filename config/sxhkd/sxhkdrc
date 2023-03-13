@@ -8,13 +8,12 @@
 
 ##---------- Terminal ----------##
 super + Return
-	alacritty &
-
-##---------- Floating terminal ----------##
-ctrl + alt + t
 	xfce4-terminal &
 
-##---------- File Manager ----------##
+##---------- Terminal Alternativo ----------##
+ctrl + alt + t
+		alacritty &
+##---------- Gerenciador de Arquivos ----------##
 super + t
 	thunar &
 
@@ -30,7 +29,7 @@ super + F12
 
 ##---------- Firefox ----------##
 super + n
-	/home/tadeu/Pacotes/firefox/firefox
+	firefox
 
 super + shift + n 
 	firefox-esr
@@ -46,15 +45,15 @@ super + semicolon
 super + o 
 	$HOME/Pacotes/LibreOffice-still.standard-x86_64.AppImage
 
-##---------- Screen Lock----------##
+##---------- Bloquer Tela ----------##
 ctrl + alt + l
 	i3lock -c "#1e1e1e"
 
-##---------- Reload Polybar ----------##  
+##---------- Recarregar Polybar ----------##  
 control + alt + r
-	/home/tadeu/.config/polybar/polybar-bspwm/launch.sh -r
+	~/.config/polybar/launch.sh -r
 
-##---------- System ----------##
+##---------- Brilho de Tela e  ----------##
 
 # Brighness control
 XF86MonBrightness{Up,Down}
