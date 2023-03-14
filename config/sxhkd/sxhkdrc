@@ -45,7 +45,7 @@ super + semicolon
 super + o 
 	$HOME/Pacotes/LibreOffice-still.standard-x86_64.AppImage
 
-##---------- Bloquer Tela ----------##
+##---------- Bloquear Tela ----------##
 ctrl + alt + l
 	i3lock -c "#1e1e1e"
 
@@ -53,7 +53,7 @@ ctrl + alt + l
 control + alt + r
 	~/.config/polybar/launch.sh -r
 
-##---------- Brilho de Tela e  ----------##
+##---------- Brilho de Tela e   ----------##
 
 # Brighness control
 XF86MonBrightness{Up,Down}
@@ -101,7 +101,7 @@ super + f
 super + {h,j,k,l,Escape}
     bspc node -p {west,south,north,east,cancel}
 
-## Preselect the ratio (mover para outra área de trabalho)
+## Preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
@@ -129,7 +129,7 @@ alt + Tab
 ctrl + alt + {Left, Right}
 	bspc desktop -f {prev.occupied,next.occupied}
 
-# Switch to prev or next workspace (occupied or not)
+# Switch to prev/next workspace
 #super + alt + {Left,Right}
 #	bspc desktop -f {prev.local,next.local}
 
