@@ -4,62 +4,72 @@
 #  / __\ \/ / '_ \| |/ / _` | '__/ __|
 #  \__ \>  <| | | |   < (_| | | | (__ 
 #  |___/_/\_\_| |_|_|\_\__,_|_|  \___|
-                                   
+#
+###########################################                                   
 
-##---------- Terminal ----------##
+# -----> Terminal
 super + Return
 	xfce4-terminal &
 
-##---------- Terminal Alternativo ----------##
 ctrl + alt + t
 		alacritty &
-##---------- Gerenciador de Arquivos ----------##
+# -----> File Manager
 super + t
 	thunar &
 
-##---------- Rofi ----------##
-super + d
-	rofi -show drun -config $HOME/.config/rofi/style-3.rasi
+#-----> Rofi
+#super + d
+#	rofi -show drun -config $HOME/.config/rofi/style-3.rasi
 
-super + w
-	rofi -show window -config $HOME/.config/rofi/style-3.rasi
+#super + w
+#	rofi -show window -config $HOME/.config/rofi/style-3.rasi
 
-super + F12
-	$HOME/.config/rofi/powermenu.sh
+#super + F12
+#	$HOME/.config/rofi/powermenu.sh
+	
+# -----> dmenu scripts
 
-##---------- Firefox ----------##
+super + {a, d, s, w, F12}
+  {$HOME/.local/bin/dmenu-scripts/menus,\
+   $HOME/.local/bin/dmenu-scripts/command-menu,\
+   $HOME/.local/bin/dmenu-scripts/mansearch,\
+   $HOME/.local/bin/dmenu-scripts/switch,\
+   $HOME/.local/bin/dmenu-scripts/logout}
+
+# -----> Web Broswer
 super + n
 	firefox
 
 super + shift + n 
 	firefox-esr
 
-##---------- CLI ----------##
+# -----> CLI Apps
 super + comma
-	alacritty -e vim
+	xfce4-terminal -e vim
+
+super + period
+	xfce4-terminal -e /usr/local/bin/vifmrun
 
 super + semicolon
-	alacritty -e htop
+	xfce4-terminal -e htop
 
-##---------- LibreOffice ----------##
+# -----> LibreOffice
 super + o 
 	$HOME/Pacotes/LibreOffice-still.standard-x86_64.AppImage
 
-##---------- Bloquear Tela ----------##
+# -----> Lock Screen
 ctrl + alt + l
 	i3lock -c "#1e1e1e"
 
-##---------- Recarregar Polybar ----------##  
+# -----> Restart Polybar
 control + alt + r
-	~/.config/polybar/launch.sh -r
+	$HOME/.config/polybar/launch.sh -r
 
-##---------- Brilho de Tela e   ----------##
+# -----> FN Keys
 
-# Brighness control
 XF86MonBrightness{Up,Down}
 	backlight{-up,-down}
 	
-# Volume control
 XF86AudioRaiseVolume 
 	pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume 
@@ -67,71 +77,63 @@ XF86AudioLowerVolume
 XF86AudioMute 
 	pactl set-sink-mute 0 toggle
 
-##---------- cmus-remote ----------##
+# -----> cmus-remote
 super + {F1,F2,F3,F4,F5}
 	cmus-remote {-u,-v -5%,-v +5%,-n,-r}
 
 super + c
-	alacritty -e /bin/cmus	
+	xfce4-terminal -e /bin/cmus	
 
-##---------- Bspwm ----------##
+# -----> Bspwm
 
-## Reload Keybindings
+# Reload Keybindings
 super + shift + c
 	pkill -USR1 -x sxhkd
 
-## Quit/Restart bspwm
+# Quit/Restart bspwm
 super + shift + {e,r}
 	bspc {quit,wm -r}
-## Close App
+# Close App
 super + q
 	bspc node -c
-## "Toggle" gaps
+# "Toggle" gaps
 super + 0
   bspc config window_gap {8, 0}
 
-## Monocle or Fullscreen
+# Monocle or Fullscreen
 super + m 
 	bspc desktop -l next
 
 super + f
 	bspc node -t ~fullscreen
 
-## split Orientation
+# split Orientation
 super + {h,j,k,l,Escape}
     bspc node -p {west,south,north,east,cancel}
 
-## Preselect the ratio
+# Preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-## Toggle beetwen floating & tiled (modo floating)
+# Toggle beetwen floating & tiled (modo floating)
 super + shift + space
     bspc node -t "~"{floating,tiled}
 
-# Pseudo Tiled & tiled mode
-#super + {w,e}
-#    bspc node -t {pseudo_tiled,tiled}
-
-## Set the node flags
+# Set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-## Send the window to another edge of the screen
+# Send the window to another edge of the screen
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
-## Change focus to next window, including floating window
+# Change focus to next window, including floating window
 alt + Tab
 	bspc node -f next.local.!hidden.window
 
 # Switch to workspace occupied
 ctrl + alt + {Left, Right}
 	bspc desktop -f {prev.occupied,next.occupied}
-
-# Switch to prev/next workspace
-#super + alt + {Left,Right}
-#	bspc desktop -f {prev.local,next.local}
 
 # Switch to last opened workspace
 super + Tab
@@ -147,7 +149,7 @@ super + r : {h,j,k,l}
     bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
     bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 	
-## Move floating windows
+# Move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
