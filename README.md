@@ -12,4 +12,4 @@ Player: [cmus](https://cmus.github.io/)
 ```
 
 <a href="https://imgur.com/Jr3nyBc"><img src="https://i.imgur.com/Jr3nyBc.png" title="source: imgur.com" /></a>
-<a href="https://imgur.com/YuQzuYI"><img src="https://i.imgur.com/Jr3nyBc.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/YuQzuYI"><img src="https://i.imgur.com/YuQzuYI" title="source: imgur.com" /></a>
