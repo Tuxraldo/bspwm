@@ -1,37 +1,20 @@
-#            _     _       _          
-#           | |   | |     | |         
-#   _____  _| |__ | | ____| |_ __ ___ 
-#  / __\ \/ / '_ \| |/ / _` | '__/ __|
-#  \__ \>  <| | | |   < (_| | | | (__ 
-#  |___/_/\_\_| |_|_|\_\__,_|_|  \___|
-#
-###########################################                                   
-
 # -----> Terminal
 super + Return
+	alacritty &
+
+# -----> Terminal alternativo
+Control + alt + t
 	xfce4-terminal &
 
-ctrl + alt + t
-		alacritty &
 # -----> File Manager
 super + t
 	thunar &
 
-#-----> Rofi
-#super + d
-#	rofi -show drun -config $HOME/.config/rofi/style-3.rasi
-
-#super + w
-#	rofi -show window -config $HOME/.config/rofi/style-3.rasi
-
-#super + F12
-#	$HOME/.config/rofi/powermenu.sh
-	
 # -----> dmenu scripts
 
 super + {a, d, s, w, F12}
   {$HOME/.local/bin/dmenu-scripts/menus,\
-   $HOME/.local/bin/dmenu-scripts/command-menu,\
+   $HOME/.local/bin/dmenu-scripts/command-menu-history,\
    $HOME/.local/bin/dmenu-scripts/mansearch,\
    $HOME/.local/bin/dmenu-scripts/switch,\
    $HOME/.local/bin/dmenu-scripts/logout}
@@ -43,19 +26,19 @@ super + n
 super + shift + n 
 	firefox-esr
 
-# -----> CLI Apps
+# -----> CLI/TUI Apps
 super + comma
-	xfce4-terminal -e vim
+	alacritty -e nvim
 
 super + period
-	xfce4-terminal -e /usr/local/bin/vifmrun
+	alacritty -e vifm
 
 super + semicolon
-	xfce4-terminal -e htop
+	alacritty -e htop
 
 # -----> LibreOffice
 super + o 
-	$HOME/Pacotes/LibreOffice-still.standard-x86_64.AppImage
+	LibreOffice
 
 # -----> Lock Screen
 ctrl + alt + l
@@ -82,7 +65,7 @@ super + {F1,F2,F3,F4,F5}
 	cmus-remote {-u,-v -5%,-v +5%,-n,-r}
 
 super + c
-	xfce4-terminal -e /bin/cmus	
+	alacritty -e cmus	
 
 # -----> Bspwm
 
@@ -93,11 +76,13 @@ super + shift + c
 # Quit/Restart bspwm
 super + shift + {e,r}
 	bspc {quit,wm -r}
+
 # Close App
 super + q
 	bspc node -c
+
 # "Toggle" gaps
-super + 0
+super + shift+ equal
   bspc config window_gap {8, 0}
 
 # Monocle or Fullscreen
@@ -140,8 +125,12 @@ super + Tab
 	bspc {desktop} -f last	
 
 # Send focused window to another workspace
-super + {_,shift + }{1-9}
-	bspc {desktop -f,node -d} '^{1-9}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Move window to different desktop and follow
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
 # Expand/contract a window by moving one of its side outward/inward
 super + r : {h,j,k,l}
@@ -153,3 +142,6 @@ super + r : {h,j,k,l}
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Bspwinmask (hide window/"scratchpad")
+super + y
+	$HOME/.config/bspwm/bspwinmask
