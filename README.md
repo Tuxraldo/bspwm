@@ -1,9 +1,10 @@
 
-```
-Para reproduzir as configs no seu sistema, apenas copie as pastas para o diretório .config (ou com o caminho completo ~/.config) 
-dentro da sua home. E certifique-se de que os arquivos "launch.sh" da polybar, "bspwmrc", "bspwinmask" 
+
+Para reproduzir as configs no seu sistema, apenas copie as pastas para o diretório .config (
+ou com o caminho completo ~/.config) dentro da sua home. E certifique-se de 
+que os arquivos "launch.sh" da polybar, "bspwmrc", "bspwinmask" 
 e "sxhkdrc" estão com permissão de execução.
-```
+
 
 ```
 Painel: polybar
